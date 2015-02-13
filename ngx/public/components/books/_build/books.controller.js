@@ -19,7 +19,7 @@
     ];
 
     $scope.addBook = function(book){
-      $scope.books.push(book);
+      $scope.books.push(angular.copy(book));
     };
 
     $scope.removeBook = function(book){
