@@ -11,7 +11,7 @@ md-content.page.page-login(layout="row", layout-align="center center")
                     input(name="username", ng-model="credentials.username", placeholder="Please enter your username")
                 md-input-container
                     label Password
-                    input(name="password", ng-model="credentials.password", placeholder="Please enter your password")
+                    input(type="password", name="password", ng-model="credentials.password", placeholder="Please enter your password")
 
                 md-progress-linear(ng-show="isBusy", md-mode="indeterminate")
 
