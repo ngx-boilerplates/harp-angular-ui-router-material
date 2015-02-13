@@ -1,0 +1,20 @@
+section.page-login
+
+    div(layout="row", layout-align="center center")
+        md-card.login(flex="40", flex-sm="80")
+            h1 Sample login form
+            form(name="loginForm", ng-submit="doLogIn(credentials)")
+                md-input-container
+                    label Username
+                    input(name="username", ng-model="credentials.username", placeholder="Please enter your username")
+                md-input-container
+                    label Password
+                    input(name="password", ng-model="credentials.password", placeholder="Please enter your password")
+
+                md-progress-linear(ng-show="isBusy", md-mode="indeterminate")
+
+                div(layout="row", layout-sm="column")
+                    md-button.md-raised.md-primary(ng-disabled="isBusy")
+                        span(ng-hide="isBusy") Log in
+                        span(ng-show="isBusy") Please wait 2 seconds...
+
