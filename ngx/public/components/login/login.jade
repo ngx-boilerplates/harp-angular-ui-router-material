@@ -1,8 +1,10 @@
-section.page-login
+md-content.page.page-login(layout="row", layout-align="center center")
 
-    div(layout="row", layout-align="center center")
-        md-card.login(flex="40", flex-sm="80")
-            h1 Sample login form
+    md-card(flex="40", flex-sm="80")
+        md-card-content
+
+            h2 Sample login form
+
             form(name="loginForm", ng-submit="doLogIn(credentials)")
                 md-input-container
                     label Username

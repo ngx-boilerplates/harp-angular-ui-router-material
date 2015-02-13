@@ -1,35 +1,37 @@
-md-content.md-padding.page-examples
+md-content.md-padding.page.page-examples
 
-    h1 Examples
-    p Here are a few example materials.
+    md-card
+        md-card-content
 
-    section.section-buttons
+            h2 Sample material components
 
-        h2 Buttons
+            section.section-buttons
 
-        section(layout="row", layout-sm="column", layout-align="left center")
-            md-button Button
-            md-button.md-primary Primary
-            md-button.md-accent Accent
-            md-button.md-warn Warn
+                h2 Buttons
 
-        section(layout="row", layout-sm="column", layout-align="left center")
-            md-button.md-raised Button
-            md-button.md-raised.md-primary Primary
-            md-button.md-raised.md-accent Accent
-            md-button.md-raised.md-warn Warn
+                section(layout="row", layout-sm="column", layout-align="left center")
+                    md-button Button
+                    md-button.md-primary Primary
+                    md-button.md-accent Accent
+                    md-button.md-warn Warn
 
-    section.section-forms
+                section(layout="row", layout-sm="column", layout-align="left center")
+                    md-button.md-raised Button
+                    md-button.md-raised.md-primary Primary
+                    md-button.md-raised.md-accent Accent
+                    md-button.md-raised.md-warn Warn
 
-        h2 Forms
+            section.section-forms
 
-        form(name="sampleForm")
-            div(layout="row", layout-sm="column")
-                md-input-container(flex)
-                    label First name
-                    input(name="firstName", ng-model="firstName", placeholder="Please enter your first name")
-                md-input-container(flex)
-                    label Last name
-                    input(name="lastName", ng-model="lastName", placeholder="Please enter your first name")
-            div(layout="row", layout-sm="column")
-                md-button.md-raised.md-primary Submit
+                h2 Forms
+
+                form(name="sampleForm")
+                    div(layout="row", layout-sm="column")
+                        md-input-container(flex)
+                            label First name
+                            input(name="firstName", ng-model="firstName", placeholder="Please enter your first name")
+                        md-input-container(flex)
+                            label Last name
+                            input(name="lastName", ng-model="lastName", placeholder="Please enter your first name")
+                    div(layout="row", layout-sm="column")
+                        md-button.md-raised.md-primary Submit
