@@ -1,0 +1,64 @@
+md-content.md-padding.page-examples
+
+    h1 Examples
+    p Here are a few example materials.
+
+    section.section-buttons
+
+        h2 Buttons
+
+        section(layout="row", layout-sm="column", layout-align="left center")
+            md-button Button
+            md-button.md-primary Primary
+            md-button.md-accent Accent
+            md-button.md-warn Warn
+
+        section(layout="row", layout-sm="column", layout-align="left center")
+            md-button.md-raised Button
+            md-button.md-raised.md-primary Primary
+            md-button.md-raised.md-accent Accent
+            md-button.md-raised.md-warn Warn
+
+    section.section-forms
+
+        h2 Forms
+
+        form(name="sampleForm")
+            div(layout="row", layout-sm="column")
+                md-input-container(flex)
+                    label First name
+                    input(name="firstName", ng-model="firstName", placeholder="Please enter your first name")
+                md-input-container(flex)
+                    label Last name
+                    input(name="lastName", ng-model="lastName", placeholder="Please enter your first name")
+            div(layout="row", layout-sm="column")
+                md-button.md-raised.md-primary Submit
+
+    section.section-books
+
+        h2 Sample book collection
+
+        p(ng-hide="books.length") No more books, please refresh the page to reset the list
+
+        md-list(ng-show="books.length")
+            md-item(ng-repeat="book in books")
+                md-item-content
+                    div.md-tile-left {{ $index + 1 }}
+                    div.md-tile-content
+                        p: strong {{ book.title }}
+                        p By {{ book.author }}
+                        p: a(ng-click="removeBook(book)") Remove book
+                md-divider(ng-if="!$last")
+
+        h4 Add a book to the collection
+
+        form(name="bookForm", ng-submit="addBook(book)")
+            div(layout="row", layout-sm="column")
+                md-input-container(flex)
+                    label Book title
+                    input(name="title", ng-model="book.title", required, placeholder="Please enter the title of the book")
+                md-input-container(flex)
+                    label Author
+                    input(name="author", ng-model="book.author", required, placeholder="Please enter the name of the author")
+            div(layout="row", layout-sm="column")
+                md-button.md-raised.md-primary Add book

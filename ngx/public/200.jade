@@ -1,0 +1,38 @@
+doctype html
+html(lang="en", ng-app="app")
+    head
+        meta(charset="utf-8")
+        title= siteTitle
+        base(href="/")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        if environment == "production"
+            link(rel="stylesheet", href="/vendor/angular-material/angular-material.min.css")
+            link(rel="stylesheet", href="/build/css/app.min.css")
+            link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Roboto:400,300", type="text/css")
+            script(src="/vendor/html5shiv/html5shiv.min.js")
+            //- For some reason jQuery seems to interfere with Material
+            //- and prevents the ripple effect from being displayed
+            //- script(src="/vendor/jquery/jquery.min.js")
+            script(src="/vendor/angular/angular.min.js")
+            script(src="/vendor/angular-animate/angular-animate.min.js")
+            script(src="/vendor/angular-aria/angular-aria.min.js")
+            script(src="/vendor/angular-material/angular-material.min.js")
+            script(src="/vendor/ui-router/angular-ui-router.min.js")
+            script(src="/build/js/app.min.js")
+        else
+            link(rel="stylesheet", href="/vendor/angular-material/angular-material.css")
+            link(rel="stylesheet", href="/build/css/app.css")
+            link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Roboto:400,300", type="text/css")
+            script(src="/vendor/html5shiv/html5shiv.js")
+            //- script(src="/vendor/jquery/jquery.js")
+            script(src="/vendor/angular/angular.js")
+            script(src="/vendor/angular-animate/angular-animate.js")
+            script(src="/vendor/angular-aria/angular-aria.js")
+            script(src="/vendor/angular-material/angular-material.js")
+            script(src="/vendor/ui-router/angular-ui-router.js")
+            script(src="/build/js/app.js")
+
+    body
+        ng-include(src="'/components/header/header.html'")
+        div(ui-view="content")
+        ng-include(src="'/components/footer/footer.html'")
